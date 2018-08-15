@@ -1,11 +1,11 @@
 from requests import get
 from requests.exceptions import RequestException
 from contextlib import closing
-from bs4 import BeautifulSoup
 
 def simple_get(url):
+    headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36'}
     try:
-        with closing(get(url, stream=True)) as resp:
+        with closing(get(url, stream=True, headers=headers)) as resp:
             if is_good_response(resp):
                 return resp.content
             else:
