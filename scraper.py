@@ -27,7 +27,7 @@ if isinstance(listing_data, list) & len(listing_data) > 0:
     listing_data = listing_data[0]
     listing_data = re.sub(r'\s+',' ', listing_data) # remove leading spaces and \n
     listing_data = demjson.decode(listing_data) # convert to json object
-    # print(json.dumps(listing_data, sort_keys=True, indent=4)) # pretty prints as array of json objects
+    print(json.dumps(listing_data, sort_keys=True, indent=4)) # pretty prints as array of json objects
 
 
 seller_data = re.compile(seller_data_regex, flags).findall(get_listing_details) # match listing data
@@ -35,4 +35,4 @@ if isinstance(seller_data, list) & len(listing_data) > 0:
     seller_data = seller_data[0]
     seller_data = re.sub(r'\s+',' ', seller_data) # remove leading spaces and \n
     seller_data = demjson.decode(seller_data) # convert to json object
-    # print(json.dumps(seller_data, sort_keys=True, indent=4)) # pretty prints as array of json objects
+    print(json.dumps(seller_data, sort_keys=True, indent=4)) # pretty prints as array of json objects
