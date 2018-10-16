@@ -1,16 +1,9 @@
-import React from 'react'
+import Header from "../components/Header"
+import Footer from "../components/Footer"
 
-export default class extends React.Component {
-  static async getInitialProps({ req }) {
-    const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
-    return { userAgent }
-  }
-
-  render() {
-    return (
-      <div>
-        Hello, {this.props.userAgent}
-      </div>
-    )
-  }
-}
+export default () => (
+  <main>
+    <Header />
+    <Footer />
+  </main>
+)
